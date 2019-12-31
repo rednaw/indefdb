@@ -1,0 +1,13 @@
+<aside data-sidebar>
+  <div class="padding">
+    <%= @dao.navigator %>
+  </div>
+</aside>
+<main>
+  <div class="padding">
+    <a href="#" data-sidebar-button>Browse filters</a>
+    <h4><%= @dao.title(@filter) %></h4>
+    <%= @dao.details(@filter) %>
+  </div>
+  <div class="overlay" data-sidebar-overlay></div>
+</main>

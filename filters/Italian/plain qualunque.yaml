@@ -1,0 +1,5 @@
+---
+description: Italian - plain qualunque
+select:
+- row['language'] == 'Italian'
+- row['form'].include? 'plain qualunque'

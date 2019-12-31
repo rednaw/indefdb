@@ -1,0 +1,25 @@
+# 2894 examples (sanity-check)
+# Filename: indefdb-annotated
+select # *,
+  ex.id as example_id, 
+  lang.name as language, item.name as item, IFNULL(form.`name`, "") as form, query.`query` as query, corpus.`name` as corpus, 
+  ex.year as year, ex.text as text, ex.source as source,
+  IFNULL(GROUP_CONCAT(fun_tag.short_name SEPARATOR "|"), "") as function,
+  IFNULL(GROUP_CONCAT(sem_tag.short_name SEPARATOR "|"), "") as semantic_tags,
+  IFNULL(GROUP_CONCAT(syn_tag.short_name SEPARATOR "|"), "") as syntactic_tags
+from IndefDBApp_annotation as ann 
+ left outer join IndefDBApp_annotation_function as fun on fun.annotation_id = ann.id 
+ left outer join IndefDBApp_annotation_semantic_tags as sem on sem.annotation_id = ann.id
+ left outer join IndefDBApp_annotation_syntax_tags as syn on syn.annotation_id = ann.id
+ right outer join IndefDBApp_example as ex on ann.example_id = ex.id
+ left outer join IndefDBApp_functiontag as fun_tag on fun.`functiontag_id` = fun_tag.id
+ left outer join IndefDBApp_semanticstag as sem_tag on sem.`semanticstag_id` = sem_tag.id
+ left outer join IndefDBApp_syntaxtag as syn_tag on syn.`syntaxtag_id` = syn_tag.id
+ join IndefDBApp_language as lang on ex.`language_id` = lang.id
+ join IndefDBApp_item as item on ex.item_id = item.id
+ join IndefDBApp_query as query on ex.query_id = query.id
+ join IndefDBApp_corpus as corpus on query.corpus_id = corpus.id
+ left outer join IndefDBApp_form as form on ex.form_id = form.id
+group by ex.id
+order by language asc, year asc, example_id asc
+;

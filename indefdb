@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'indefdb/web'
+
+ENV['SINATRA_ACTIVESUPPORT_WARNING'] = 'false'
+require 'sinatra'
+set :root, __dir__
+
+get '/*' do
+  @filter = params[:splat][0]
+  @filter = '' if @filter.nil?
+  @dao = IndefDB::Web.new
+  erb :index , :layout => :layout
+end

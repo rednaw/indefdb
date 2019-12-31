@@ -1,0 +1,5 @@
+---
+description: German - irgend (all forms)
+select:
+- row['language'] == 'German'
+- row['form'].match(/\birgend\b/)

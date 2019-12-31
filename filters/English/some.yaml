@@ -1,0 +1,5 @@
+---
+description: English - some
+select:
+- row['language'] == 'English'
+- row['item'] == 'some'

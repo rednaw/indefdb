@@ -1,0 +1,5 @@
+---
+description: Spanish - cualquiera synchronic (20th century)
+select:
+- row['language'] == 'Spanish'
+- row['year'] == 20

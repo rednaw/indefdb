@@ -1,0 +1,5 @@
+---
+description: Spanish - cualquiera diachronic (13th/16th/18th century)
+select:
+- row['language'] == 'Spanish'
+- row['year'] == 13 or row['year'] == 16 or row['year'] == 18

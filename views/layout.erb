@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IndefDB</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/sidebar.css">
+    <%= Daru::View.dependent_script(:datatables) %>
+  </head>
+  <body>
+    <%= yield %>
+    <script type="text/javascript" src="/sidebar.js"></script>    
+  </body>
+</html>
