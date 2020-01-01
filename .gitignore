@@ -1,15 +1,6 @@
-# Ruby
+# Local Ruby configuration
 .bundle
-Gemfile.lock
 
 # RSpec unit test results
 .rspec_status
-
-# IntelliJ
-.idea
-indefdb.iml
-
-# Visual Studio
-indefdb.code-workspace
-.vscode
 

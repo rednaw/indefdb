@@ -1,4 +1,4 @@
-IndefDB provides filtered views on the IndefDB dataset
+Provides insight into the IndefDB dataset
 
 # Install
 Open a terminal and run the following commands:

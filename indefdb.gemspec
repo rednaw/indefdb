@@ -1,13 +1,15 @@
-Gem::Specification.new do |spec|
-  spec.name = "indefdb"
-  spec.version = "1.0.0"
-  spec.authors = ["rednaw"]
-  spec.summary = %q{Provides insight into the IndefDB dataset}
-  spec.files   = Dir.glob("{filters,lib,public,views}/**/*") + %w(indefdb config.ru)
-  spec.bindir = '.'
-  spec.executables << 'indefdb'
+Gem::Specification.new do |s|
+  s.name        = 'indefdb'
+  s.version     = '1.0.0'
+  s.date        = '2020-01-01'
+  s.summary     = "IndefDB"
+  s.description = "Provides insight into the IndefDB dataset"
+  s.authors     = ["rednaw"]
+  s.files       = Dir.glob("{filters,lib,public,views}/**/*") + %w(indefdb config.ru)
+  s.homepage    = 'https://github.com/rednaw/indefdb'
+  s.license     = 'MIT'
+  s.bindir = '.'
+  s.executables << 'indefdb'
 
-  spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  s.required_ruby_version = '>= 2.3.7'
 end
