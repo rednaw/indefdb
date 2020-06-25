@@ -55,7 +55,7 @@ GEM
     nyaplot (0.1.6)
     packable (1.3.10)
       backports
-    rack (2.0.8)
+    rack (2.2.3)
     rack-protection (2.0.8)
       rack
     rails-dom-testing (2.0.3)
